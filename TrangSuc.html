@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="contain">
+		<div class="header">
+			<p> Telephone:0353956450 &nbsp;&nbsp;</p>
+			<p> Email: hoanghuongnguyen2000@gmail.com</p>	
+		</div>
+		<div class="header1">
+			<button> Gio hang</button>
+			<!-- <img src="Picture/logo.psd"> -->
+		</div>
+		<div class="mainBar"> 
+			<div class ="mainBara">
+			<a  href="#" class="active"> <strong>DANH MỤC SẢN PHẨM </strong></a><hr width="100%" align="center"/>
+			<a href="#"> <img src="clock.png">  Khuyến mãi hót</a><hr width="100%" align="center"/>
+			<a href="#"> <img src="clock.png">  Bông tai</a><hr width="100%" align="center"/>
+			<a href="#"> <img src="clock.png">  Phụ kiện</a><hr width="100%" align="center"/>
+			<a href="#"> <img src="clock.png">  Dây chuyền </a><hr width="100%" align="center"/>
+			<a href="#"> <img src="clock.png">  Đồng hồ </a><hr width="100%" align="center"/>
+			<a href="#"> <img src="giay.png">  Bông tai</a><hr width="100%" align="center"/>
+			<a href="#"> <img src=""> Lắc tay</a>
+			</div> 
+		</div>
+		<div class="mainBar1"> 
+			<div style="height: 50px; background-color: #EE4F11;text-align:center; ">
+			<a href="#"> Trang chu</a> &emsp;&emsp;&emsp;
+			<a href="#"> Trang sức</a>&emsp;&emsp;&emsp;
+			<a href="#"> Trang sức cưới</a>&emsp;&emsp;&emsp;
+			<a href="#"> Trang sức kim cương</a>&emsp;&emsp;&emsp;
+			<a href="#"> Quà Tặng</a>&emsp;&emsp;&emsp;
+			<a href="#"> Hướng dẫn</a>&emsp;&emsp;&emsp;
+			<a href="#"> Hãng</a>
+			</div>
+		</div>
+		<div class="mota">
+			<img style="width: 1000px;height: 430px;" src="Picture/hinhnen.jpg">
+		</div>
+		<div>
+			
+		</div>
+		<div class="content">
+			<img style="width: 250px; height: 350px;" src="Picture/imagecontent.jpg">
+		</div>
+		<div class="content1" id ="container">
+			<script type="text/javascript">
+				var tc1={
+					name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+					price:280000 +"đ",
+					image:"Picture/matdaychuyen.jpg"
+				};
+				var tc2={
+					name:"BỘ TRANG SỨC VÀNG 18K ĐÍNH ĐÁ RUBY PNJ 00028-00556",
+					price:280000 +"đ",
+					image:"Picture/botrangsuc.jpg"
+				};
+				var tc3={
+					name:"bộ trang sức màu bạc đính đá xanh",
+					price:735000 +"đ",
+					image:"Picture/daxanh.png"
+				};
+				var tc4={
+					name:"Nhan cuoi",
+					price:6000000 +"đ",
+					image:"Picture/matdaychuyen.jpg"
+				};
+				var tc5={
+					name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+					price:280000 +"đ",
+					image:"Picture/matdaychuyen.jpg"
+				};
+				var tc6={
+					name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+					price:280000 +"đ",
+					image:"Picture/matdaychuyen.jpg"
+				};
+				var tc7={
+					name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+					price:280000 +"đ",
+					image:"Picture/matdaychuyen.jpg"
+				};
+				var tc8={
+					name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+					price:280000 +"đ",
+					image:"Picture/matdaychuyen.jpg"
+				};
+				var trangsuc=[tc1,tc2,tc3,tc4,tc5,tc6,tc7,tc8];
+
+				for(var i=0;i<trangsuc.length;i++){
+					var container=document.getElementById("container");
+
+					var line=document.createElement("div");
+						line.className="line";
+					var prImg=document.createElement("img");
+						prImg.src=trangsuc[i].image;
+						prImg.className="image";
+
+					var prname=document.createElement("p");
+						prname.innerText=trangsuc[i].name+"\n";
+
+					var prprice=document.createElement("p");
+					prprice.innerText=trangsuc[i].price;
+
+					line.appendChild(prImg);
+					line.appendChild(prname);
+					line.appendChild(prprice);
+
+					container.appendChild(line);
+						}
+			</script>
+		</div>
+		
+		<div class="footer">
+			c
+		</div>
+		<!-- <div
+			<img src="logo.psd">
+			<p> Hotline:0353956450</p>
+		</div> -->
+	</div>
+
+</body>
+</html>
