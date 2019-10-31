@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+	<div id ="Header">
+	<div class="header">
+		<p> Telephone:0353956450 &nbsp;&nbsp; Email: hoanghuongnguyen2000@gmail.com</p> 
+		<h2> Cửa hàng trang sức Hoàng Hương </h2> <h3 style ="margin-left: 800px;"> Địa chỉ: 101 B Lê Hữu Trác, Sơn Trà Đà Nẵng</h3>
+		<img src="Picture/hinhnen.jpg">
+	</div>
+	<div class="header1">
+		<img style="float: right;width: 80px; height: 50px;" src="Picture/giohang.png">
+		<button  onclick="displays()" style="float: right;width: 70px;height: 40px;"> Gio hang</button>
+	</div>
+</div>
+	<center>
+	<div id ="container">
+	</div>
+	<p style="float: left;"id= "back">
+	</p>
+	<h1> Gio Hang</h1>
+	<div id ="container-cart">
+		
+	</div>
+	<div id ="tinhtien" style="border: 1px solid black; width:300px; height:200px; margin-right: 500px;margin-top: 30px;">
+		<button style=" margin-left: 30px; margin-right: 500px;margin-top: 20px;width: 90px;height: 30px;background-color: red;border: 1px solid black;" onclick="onclicksum()"> Tính tiền </button>
+ 		<h2 id= "result"></h2>
+ 		<button style=" margin-left: 30px; ;margin-right: 500px;margin-top: 20px;width: 90px;height: 30px;background-color: green;border: 1px solid black;" onclick="onclickPay()"> Thanh toán </button>
+ 	</div> 
+ 	<div id="dathang">
+ 		
+ 	</div>
+	</center>
+		<script type="text/javascript">
+			var tc1={
+				name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+				price:280000 +"đ",
+				image:"Picture/matdaychuyen.jpg"
+			};
+			var tc2={
+				name:"Bộ vàng 18k đính đá ruby pnj-00028-00556",
+				price:280000 +"đ",
+				image:"Picture/botrangsuc.jpg"
+			};
+			var tc3={
+				name:"bộ trang sức màu bạc đính đá xanh",
+				price:735000 +"đ",
+				image:"Picture/daxanh.png"
+			};
+			var tc4={
+				name:"Nhan cuoi doi mạ kim cương -KC000340",
+				price:6000000 +"đ",
+				image:"Picture/nhancuoi.jpg"
+			};
+			var tc5={
+				name:"Bông tai bac đính đá – PA000179",
+				price:280000 +"đ",
+				image:"Picture/bongtaibac.jpg"
+			};
+			var tc6={
+				name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+				price:280000 +"đ",
+				image:"Picture/matdaychuyen.jpg"
+			};
+			var tc7={
+				name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+				price:280000 +"đ",
+				image:"Picture/matdaychuyen.jpg"
+			};
+			var tc8={
+				name:"Mặt dây chuyền bạc trăng khuyết – PA000179",
+				price:280000 +"đ",
+				image:"Picture/matdaychuyen.jpg"
+			};
+			var trangsuc=[tc1,tc2,tc3,tc4,tc5,tc6,tc7,tc8];
+			var cart=[];
+			displayProduct();
+			function displayProduct(){
+			for(var i=0;i<trangsuc.length;i++){
+				var container=document.getElementById("container");
+				    container.className="container";
+				var line=document.createElement("div");
+					line.className="line";
+				var prImg=document.createElement("img");
+					prImg.src=trangsuc[i].image;
+					prImg.className="image";
+
+				var prname=document.createElement("p");
+					prname.innerText=trangsuc[i].name+"\n";
+
+				var prprice=document.createElement("p");
+					prprice.innerText=trangsuc[i].price;
+
+				var dathang=document.createElement("button");
+				dathang.innerText="Add";
+				dathang.className="button";
+				dathang.onclick= function(arg){
+					return function(){
+					cart.push(trangsuc[arg]);
+					}
+				}(i);
+				
+				line.appendChild(prImg);
+				line.appendChild(prname);
+				line.appendChild(prprice);
+				line.appendChild(dathang);
+
+				container.appendChild(line);
+				}}
+				var backs=document.getElementById("back");
+				var back=document.createElement("button");
+				back.innerText="Back";
+				back.onclick=function(){
+					document.getElementById("container-cart").innerText='';
+					displayProduct();
+				}
+				backs.appendChild(back);
+			function displays(){			
+			// document.getElementById("Header").innerText='';
+			   document.getElementById("container").innerText='';
+			    document.getElementById("container-cart").innerText='';
+			   for(var i=0;i<cart.length;i++){
+
+				var containercart=document.getElementById("container-cart");
+				var display1=document.createElement("div");
+					display1.className=("display");
+			
+				var prImg=document.createElement("img");
+					prImg.src=cart[i].image;
+					prImg.className="image";
+				
+				var pname=document.createElement("p");
+					pname.innerText=cart[i].name;
+				var pprice=document.createElement("p");
+					pprice.innerText=cart[i].price;
+
+				var dele=document.createElement("button");
+				dele.innerText="Delete";
+				dele.className="button";
+				dele.onclick=function(arg){
+					return function(){							
+					cart.splice(arg,1);
+					displays();
+					}
+				}(i);
+				display1.appendChild(prImg);
+				display1.appendChild(pname);
+				display1.appendChild(pprice);
+				display1.appendChild(dele);
+				containercart.appendChild(display1);
+			}
+
+		}	
+		function back(){
+			displayProduct();
+		} 
+		function onclicksum(){
+			var containercart=document.getElementById("container-cart");
+			var sum=0;
+			for(var i=0;i<cart.length;i++){
+				sum+=parseInt(cart[i].price);
+			}
+			var prices=document.createElement("p");
+			prices.innerText= "Tổng tiền của quý khách là :" + sum;
+
+			var sum=document.getElementById("result");
+			sum.appendChild(prices);	
+		}
+		function onclickPay() {
+			var hoten = document.getElementById('hoten').value;
+			var dt = document.getElementById('dienthoai').value;
+			var email = document.getElementById('email').value;
+			var dc = document.getElementById('diachi').value;
+			var ttien = document.getElementById('tongtienn').value;
+	document.getElementById('showtt').innerHTML = "Bạn tên là "+hoten+"<br> Số Điện Thoại : "+dt+",<br> Email của bạn: "+email+" . Địa Chỉ: "+dc+"<br> Tổng số tiền bạn phải thanh toán :" +ttien;
+	document.getElementById('showtt').style.color ="red"
+	
+}
+		</script>
+</body>
+</html>
