@@ -1,7 +1,7 @@
 .container{
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	width: 1000px;
+	width: 1500px;
 }
 .header{
 	background-color:pink;
@@ -9,31 +9,40 @@
 	text-align: center;
 }
 .line{
+	background-color: #7DCBDE;
 	border:1px solid;
 	width: 250px;
 	text-align: center;
 	margin-top: 20PX;
-	margin-left: 20px;
+	margin-left: 50px;
 }
 .image{
 	width: 200px;
 	height: 200px;
 }
+.cart-img{
+	width: 100px;
+	height: 100px;
+}
 .button{
-	border:1px solid #030303;
-	border-radius: 2px;
+	border:1px solid #726C6C;
+	border-radius: 4px;
 	background-color: green;
-	width: 80px;
-	height: 30px;
+	width: 180px;
+	height: 40px;
 	margin-bottom: 20px;
 }
 .display{
 	display: flex;
 	justify-content: space-between;
-	width: 800px;
+	width: 900px;
 	border:1px solid;
 	border-radius: 4px;
 	margin-left: 20px;
 	margin-top: 20px;
 }
 
+.input{
+	width: 100px;
+	height: 40px;
+}
